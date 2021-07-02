@@ -16,8 +16,12 @@ const ChatListItem = (props: ChatListItemProps) => {
     // @ts-ignore
     const user = chatRoom.users[1];
 
+    const onClick = () => {
+        console.log("CLICKED 🚀", user.name);
+    }
+
     return (
-            <TouchableOpacity activeOpacity={0.8} >
+            <TouchableOpacity activeOpacity={0.8} onPress={onClick} >
                 <View style={styles.container}>
                     <View style={styles.leftContainer}>
             {/*// @ts-ignore*/}
