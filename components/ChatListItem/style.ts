@@ -32,6 +32,9 @@ const styles = StyleSheet.create({
     time: {
         fontSize: 16,
         color: "grey",
+    },
+    user: {
+
     }
 });
 
