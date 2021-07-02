@@ -38,9 +38,9 @@ function RootNavigator() {
         }
         }}>
       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ title: "Whatsapp", headerRight: () => (
-        <View>
+        <View style={{ flexDirection: "row", width: 60, justifyContent: "space-between", marginRight: 10}}>
             <Octicons name="search" size={24} color="white" />
-            <Entypo name="dots-three-vertical" size={30} color="white" />
+            <Entypo name="dots-three-vertical" size={24} color="white" />
         </View>
           )
       }} />
