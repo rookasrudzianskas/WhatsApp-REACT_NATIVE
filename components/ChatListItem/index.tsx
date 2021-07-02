@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./style";
 import {ChatRoom} from "../../types";
 import moment from "moment";
-
+import { useNavigation } from "@react-navigation/native";
 export type ChatListItemProps = {
     chatRoom: ChatRoom;
 }
@@ -11,13 +11,18 @@ export type ChatListItemProps = {
 
 const ChatListItem = (props: ChatListItemProps) => {
 
+    const navigation = useNavigation();
+
     const { chatRoom } = props;
 
     // @ts-ignore
     const user = chatRoom.users[1];
 
     const onClick = () => {
+        //
+        // @ts-ignore
         console.log("CLICKED 🚀", user.name);
+        navigation.navigate("ChatRoom");
     }
 
     return (
