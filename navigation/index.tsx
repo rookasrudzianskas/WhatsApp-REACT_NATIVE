@@ -5,7 +5,7 @@ import {ColorSchemeName, View} from 'react-native';
 
 import NotFoundScreen from '../screens/NotFoundScreen';
 import { RootStackParamList } from '../types';
-import BottomTabNavigator from './BottomTabNavigator';
+import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 import { Entypo } from '@expo/vector-icons';
@@ -21,8 +21,6 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
   );
 }
 
-// A root stack navigator is often used for displaying modals on top of all other content
-// Read more here: https://reactnavigation.org/docs/modal
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
@@ -37,10 +35,10 @@ function RootNavigator() {
             fontWeight: "bold",
         }
         }}>
-      <Stack.Screen name="Root" component={BottomTabNavigator} options={{ title: "Whatsapp", headerRight: () => (
+      <Stack.Screen name="Root" component={MainTabNavigator} options={{ title: "Whatsapp", headerRight: () => (
         <View style={{ flexDirection: "row", width: 60, justifyContent: "space-between", marginRight: 10}}>
-            <Octicons name="search" size={24} color="white" />
-            <Entypo name="dots-three-vertical" size={24} color="white" />
+            <Octicons name="search" size={22} color="white" />
+            <Entypo name="dots-three-vertical" size={22} color="white" />
         </View>
           )
       }} />
