@@ -1,5 +1,4 @@
 import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
@@ -10,30 +9,41 @@ import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-const BottomTab = createMaterialTopTabNavigator<BottomTabParamList>();
+const MainTab = createMaterialTopTabNavigator<BottomTabParamList>();
 
 export default function MainTabNavigator() {
   const colorScheme = useColorScheme();
 
   return (
-    <BottomTab.Navigator
+    <MainTab.Navigator
       initialRouteName="TabOne"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
-      <BottomTab.Screen
+      tabBarOptions={{
+          activeTintColor: Colors[colorScheme].background,
+          style: {
+              backgroundColor: Colors[colorScheme].tint,
+          },
+          indicatorStyle: {
+              backgroundColor: Colors[colorScheme].background,
+              height: 4,
+          }
+
+
+      }}>
+      <MainTab.Screen
         name="TabOne"
         component={TabOneNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
-      <BottomTab.Screen
+      <MainTab.Screen
         name="TabTwo"
         component={TabTwoNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
       />
-    </BottomTab.Navigator>
+    </MainTab.Navigator>
   );
 }
 
