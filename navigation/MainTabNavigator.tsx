@@ -25,6 +25,9 @@ export default function MainTabNavigator() {
           indicatorStyle: {
               backgroundColor: Colors[colorScheme].background,
               height: 4,
+          },
+          labelStyle: {
+              fontWeight: "bold",
           }
 
 
