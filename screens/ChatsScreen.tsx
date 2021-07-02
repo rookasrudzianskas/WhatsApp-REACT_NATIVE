@@ -11,7 +11,7 @@ export default function ChatsScreen() {
   return (
     <View style={styles.container}>
   {/*// @ts-ignore*/}
-        <FlatList style={{ width: "100%" }} data={chatRooms} renderItem={({item}) => <ChatListItem chatRoom={item} />} keyExtractor={(item) => item.id} />
+        <FlatList numberOfLines={2} style={{ width: "100%" }} data={chatRooms} renderItem={({item}) => <ChatListItem chatRoom={item} />} keyExtractor={(item) => item.id} />
     </View>
   );
 };
