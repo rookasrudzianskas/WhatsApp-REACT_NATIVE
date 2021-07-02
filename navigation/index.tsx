@@ -50,7 +50,7 @@ function RootNavigator() {
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
                     options={({route}) =>
                         ({
-                                title: route.params.id,
+                                title: route.params.name,
                 })} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
