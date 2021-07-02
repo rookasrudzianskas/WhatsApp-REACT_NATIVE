@@ -5,7 +5,7 @@ import {View, Text} from "react-native";
 const ChatRoomScreen = () => {
     return (
         <View>
-
+            <Text>Chat Room</Text>
         </View>
     );
 };

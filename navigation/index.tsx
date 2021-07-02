@@ -10,6 +10,7 @@ import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
 import { Entypo } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
+import ChatRoomScreen from "../screens/ChatRoomScreen";
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -44,6 +45,7 @@ function RootNavigator() {
         </View>
           )
       }} />
+      <Stack.Screen name="Chat Room" component={ChatRoomScreen} options={{ title: 'Chat Room' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
