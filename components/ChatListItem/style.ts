@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         width: "100%",
     },
     time: {
-        fontSize: 16,
+        fontSize: 14,
         color: "grey",
     },
     user: {
