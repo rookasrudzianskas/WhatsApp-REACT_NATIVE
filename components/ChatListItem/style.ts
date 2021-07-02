@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "space-between",
         padding: 10,
+        marginTop: 3,
 
     },
     midContainer: {
