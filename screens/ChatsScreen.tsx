@@ -11,10 +11,10 @@ export default function ChatsScreen() {
   return (
     <View style={styles.container}>
   {/*// @ts-ignore*/}
-        <FlatList data={chatRooms} renderItem={({item}) => <ChatListItem chatRoom={item} />} keyExtractor={(item) => item.id} />
+        <FlatList style={{ width: "100%" }} data={chatRooms} renderItem={({item}) => <ChatListItem chatRoom={item} />} keyExtractor={(item) => item.id} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
