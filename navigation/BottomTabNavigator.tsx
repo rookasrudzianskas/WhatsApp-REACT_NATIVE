@@ -59,6 +59,7 @@ function TabOneNavigator() {
         component={TabOneScreen}
         options={{ headerTitle: 'Tab One Title' }}
       />
+
     </TabOneStack.Navigator>
   );
 }
