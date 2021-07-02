@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
         padding: 10,
 
     },
+    midContainer: {
+        justifyContent: "space-around",
+    },
     leftContainer: {
       flexDirection: "row",
     },
