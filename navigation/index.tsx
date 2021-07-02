@@ -47,7 +47,11 @@ function RootNavigator() {
       }} />
 
   {/*// @ts-ignore*/}
-      <Stack.Screen name="ChatRoom" component={ChatRoomScreen} options={{ title: 'Chat Room' }} />
+      <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
+                    options={({route}) =>
+                        ({
+                                title: route.params.id,
+                })} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
