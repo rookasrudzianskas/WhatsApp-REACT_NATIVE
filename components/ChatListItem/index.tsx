@@ -39,7 +39,6 @@ const ChatListItem = (props: ChatListItemProps) => {
                     </View>
 
             {/*// @ts-ignore*/}
-            {/*// @ts-ignore*/}
                     <Text style={styles.time}>{moment(chatRoom.lastMessage.createdAt).format(" DD/MM/YYYY")}</Text>
                     {/*<Text style={styles.time}>Yesterday</Text>*/}
                 </View>
