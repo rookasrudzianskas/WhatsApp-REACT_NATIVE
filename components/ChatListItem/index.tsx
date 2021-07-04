@@ -7,7 +7,6 @@ import { useNavigation } from "@react-navigation/native";
 export type ChatListItemProps = {
     chatRoom: ChatRoom;
 }
-// something
 
 
 const ChatListItem = (props: ChatListItemProps) => {
