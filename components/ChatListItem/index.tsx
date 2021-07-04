@@ -16,7 +16,6 @@ export type ChatListItemProps = {
 // something
 // something
 // something
-// something
 
 
 const ChatListItem = (props: ChatListItemProps) => {
