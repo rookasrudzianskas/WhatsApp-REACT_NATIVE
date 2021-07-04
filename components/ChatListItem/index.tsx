@@ -8,7 +8,6 @@ export type ChatListItemProps = {
     chatRoom: ChatRoom;
 }
 // something
-// something
 
 
 const ChatListItem = (props: ChatListItemProps) => {
