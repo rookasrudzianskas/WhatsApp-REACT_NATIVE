@@ -11,6 +11,7 @@ import Colors from "../constants/Colors";
 import { Entypo, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import ChatRoomScreen from "../screens/ChatRoomScreen";
+import ContactsScreen from '../screens/ContactsScreen';
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -25,6 +26,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+    // @ts-ignore
     // @ts-ignore
     return (
     <Stack.Navigator screenOptions={{
@@ -51,7 +53,6 @@ function RootNavigator() {
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
                     options={({route}) =>
                         ({
-  // @ts-ignore
                                 title: route.params.name,
                                 headerRight: () => (
                                     <View style={{
@@ -67,6 +68,8 @@ function RootNavigator() {
                                     </View>
                                 )
                 })} />
+  {/*// @ts-ignore*/}
+      <Stack.Screen name="Contacts" component={ContactsScreen} options={{ title: 'Oops!' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
