@@ -10,7 +10,7 @@ const ChatRoomScreen = () => {
 
     return (
         <View>
-            <Text>Chat Room</Text>
+            <Text>Chat Room Screen</Text>
         </View>
     );
 };
