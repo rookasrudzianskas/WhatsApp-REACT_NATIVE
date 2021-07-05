@@ -1,7 +1,7 @@
 export default [{
   id: 'u1',
-  name: 'Vadim',
-  imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
+  name: 'Rokas',
+  imageUri: 'https://pbs.twimg.com/profile_images/1350895249678348292/RS1Aa0iK.jpg',
   status: "Hello there, how are you"
 }, {
   id: 'u2',
@@ -9,7 +9,7 @@ export default [{
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg',
 }, {
   id: 'u3',
-  name: 'Daniil',
+  name: 'Tim',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg',
 }, {
   id: 'u4',
@@ -17,7 +17,7 @@ export default [{
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.png',
 }, {
   id: 'u5',
-  name: 'Vlad',
+  name: 'Todd',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg',
 }, {
   id: 'u6',
@@ -29,7 +29,7 @@ export default [{
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/6.png',
 }, {
   id: 'u8',
-  name: 'Borja',
+  name: 'Suzan',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/7.png',
 }, {
   id: 'u9',
