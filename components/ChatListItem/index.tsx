@@ -20,7 +20,6 @@ const ChatListItem = (props: ChatListItemProps) => {
 
     const onClick = () => {
         //
-        // @ts-ignore
         navigation.navigate("ChatRoom", {id: chatRoom.id, name: user.name });
     }
 
