@@ -25,6 +25,7 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const Stack = createStackNavigator<RootStackParamList>();
 
 function RootNavigator() {
+    // @ts-ignore
     return (
     <Stack.Navigator screenOptions={{
         headerStyle: {
@@ -50,6 +51,7 @@ function RootNavigator() {
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
                     options={({route}) =>
                         ({
+  // @ts-ignore
                                 title: route.params.name,
                 })} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
