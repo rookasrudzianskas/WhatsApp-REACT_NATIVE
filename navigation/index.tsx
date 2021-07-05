@@ -8,7 +8,7 @@ import { RootStackParamList } from '../types';
 import MainTabNavigator from './MainTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
 import Colors from "../constants/Colors";
-import { Entypo } from '@expo/vector-icons';
+import { Entypo, FontAwesome5, MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { Octicons } from '@expo/vector-icons';
 import ChatRoomScreen from "../screens/ChatRoomScreen";
 
@@ -55,6 +55,9 @@ function RootNavigator() {
                                 title: route.params.name,
                                 headerRight: () => (
                                     <View>
+                                        <MaterialIcons name="call" size={22} color="white" />
+                                        <FontAwesome5 name="vide" size={22} color="white" />
+                                        <MaterialCommunityIcons name="dots-vertical" size={22} color="white" />
 
                                     </View>
                                 )
