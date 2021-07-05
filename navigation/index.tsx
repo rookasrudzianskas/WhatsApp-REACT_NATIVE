@@ -54,10 +54,15 @@ function RootNavigator() {
   // @ts-ignore
                                 title: route.params.name,
                                 headerRight: () => (
-                                    <View>
+                                    <View style={{
+                                        flexDirection: "row",
+                                        width: 100,
+                                        justifyContent: "space-between",
+                                        marginRight: 10,
+                                    }}>
+                                        <FontAwesome5 name="video" size={22} color="white" />
                                         <MaterialIcons name="call" size={22} color="white" />
-                                        {/*<FontAwesome5 name="video" size={22} color="white" />*/}
-                                        {/*<MaterialCommunityIcons name="dots-vertical" size={22} color="white" />*/}
+                                        <MaterialCommunityIcons name="dots-vertical" size={22} color="white" />
 
                                     </View>
                                 )
