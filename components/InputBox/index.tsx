@@ -1,12 +1,29 @@
 import React, {useState} from 'react';
 import styles from "./styles";
-import {View, Text, TextInput, KeyboardAvoidingView} from "react-native";
+import {View, Text, TextInput, KeyboardAvoidingView, TouchableOpacity} from "react-native";
 import {MaterialCommunityIcons, FontAwesome5, Entypo, Fontisto, MaterialIcons} from "@expo/vector-icons";
 
 const InputBox = () => {
 
     const [message, setMessage] = useState('');
 
+    const onMicrophonePress = () => {
+        console.log("MICROPHONE");
+    }
+
+    const onSendPress = () => {
+        console.log("SENDING", message);
+
+        setMessage("");
+    }
+
+    const onPress = () => {
+        if(!message) {
+            onMicrophonePress();
+        } else {
+            onSendPress();
+        }
+    }
 
     return (
         <KeyboardAvoidingView behavior="height" style={styles.container}>
@@ -19,7 +36,7 @@ const InputBox = () => {
 
             </View>
 
-            <View style={styles.buttonContainer}>
+            <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
                 {
                     !message ? (
                         <MaterialCommunityIcons name="microphone" size={28} color="white" />
@@ -27,8 +44,9 @@ const InputBox = () => {
                         <MaterialIcons name="send" size={28} color={"white"} />
                     )
                 }
-            </View>
+            </TouchableOpacity>
         </KeyboardAvoidingView>
+
     );
 }
 
