@@ -53,6 +53,11 @@ function RootNavigator() {
                         ({
   // @ts-ignore
                                 title: route.params.name,
+                                headerRight: () => (
+                                    <View>
+
+                                    </View>
+                                )
                 })} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
