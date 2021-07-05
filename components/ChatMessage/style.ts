@@ -13,9 +13,10 @@ const styles = StyleSheet.create({
     },
     name: {
         color: Colors.light.tint,
+        fontWeight: "bold",
+        marginBottom: 5,
     },
     message: {
-
     },
     time: {
 
