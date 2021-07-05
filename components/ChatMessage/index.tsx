@@ -22,7 +22,7 @@ const ChatMessage = (props: ChatMessageProps) => {
     // @ts-ignore
     return (
         <View style={styles.container}>
-            <View style={[styles.messageBox, {backgroundColor: isMyMessage() ? "#dcf8c5" : "white"}]}>
+            <View style={[styles.messageBox, {backgroundColor: isMyMessage() ? "#dcf8c5" : "white", marginLeft: isMyMessage() ? 50 : 0, marginRight: isMyMessage() ? 0 : 50}]}>
                 <Text>{message.user.name}</Text>
                 <Text>{message.content}</Text>
         {/*// @ts-ignore*/}
