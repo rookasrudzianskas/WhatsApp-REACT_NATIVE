@@ -14,7 +14,6 @@ export default function ContactsScreen() {
         <View style={styles.container}>
             {/*// @ts-ignore*/}
             <FlatList numberOfLines={2} style={{ width: "100%" }} data={users} renderItem={({item}) => <ContactListItem user={item} />} keyExtractor={(item) => item.id} />
-            <NewMessageButton />
         </View>
     );
 };
