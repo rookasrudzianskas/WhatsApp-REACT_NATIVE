@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text} from "react-native";
+import {View, Text, FlatList} from "react-native";
 import {useRoute} from "@react-navigation/native";
-
+import chatRoomData from "../data/Chats";
+import ChatMessage from "../components/ChatMessage";
 
 const ChatRoomScreen = () => {
 
@@ -10,7 +11,7 @@ const ChatRoomScreen = () => {
 
     return (
         <View>
-            <Text>Chat Room Screen</Text>
+            <FlatList data={chatRoomData.messages} renderItem={({item}) => <ChatMessage message={item}  /> } />
         </View>
     );
 };
