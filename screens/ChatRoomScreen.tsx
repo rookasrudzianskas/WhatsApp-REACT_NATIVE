@@ -10,9 +10,8 @@ const ChatRoomScreen = () => {
     console.log("This is route params", route.params);
 
     return (
-        <View>
-            <FlatList data={chatRoomData.messages} renderItem={({item}) => <ChatMessage message={item}  /> } />
-        </View>
+    // @ts-ignore
+            <FlatList data={chatRoomData.messages} renderItem={({item}) => <ChatMessage message={item}  /> } inverted />
     );
 };
 
