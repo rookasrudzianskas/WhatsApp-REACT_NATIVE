@@ -56,8 +56,8 @@ function RootNavigator() {
                                 headerRight: () => (
                                     <View>
                                         <MaterialIcons name="call" size={22} color="white" />
-                                        <FontAwesome5 name="vide" size={22} color="white" />
-                                        <MaterialCommunityIcons name="dots-vertical" size={22} color="white" />
+                                        {/*<FontAwesome5 name="video" size={22} color="white" />*/}
+                                        {/*<MaterialCommunityIcons name="dots-vertical" size={22} color="white" />*/}
 
                                     </View>
                                 )
