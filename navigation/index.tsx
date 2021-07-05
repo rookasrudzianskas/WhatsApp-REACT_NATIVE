@@ -70,7 +70,7 @@ function RootNavigator() {
                                 )
                 })} />
   {/*// @ts-ignore*/}
-      <Stack.Screen name="Contacts" component={ContactsScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="Contacts" component={ContactsScreen} options={{ title: 'Contacts' }} />
       <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
     </Stack.Navigator>
   );
