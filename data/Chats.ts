@@ -2,7 +2,7 @@ export default {
 	id: '1',
 	users: [{
 		id: 'u1',
-		name: 'Vadim',
+		name: 'Rokas',
 		imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/1.jpg',
 	}, {
 		id: 'u2',
@@ -15,7 +15,7 @@ export default {
 		createdAt: '2020-10-10T12:48:00.000Z',
 		user: {
 			id: 'u1',
-			name: 'Vadim',
+			name: 'Rokas',
 		},
 	}, {
 		id: 'm2',
@@ -39,7 +39,7 @@ export default {
 		createdAt: '2020-10-03T14:50:00.000Z',
 		user: {
 			id: 'u1',
-			name: 'Vadim',
+			name: 'Rokas',
 		},
 	}, {
 		id: 'm5',
@@ -47,7 +47,7 @@ export default {
 		createdAt: '2020-10-03T14:51:00.000Z',
 		user: {
 			id: 'u1',
-			name: 'Vadim',
+			name: 'Rokas',
 		},
 	}, {
 		id: 'm6',
@@ -63,7 +63,7 @@ export default {
 		createdAt: '2020-10-03T14:53:00.000Z',
 		user: {
 			id: 'u1',
-			name: 'Vadim',
+			name: 'Rokas',
 		},
 	}]
 }
