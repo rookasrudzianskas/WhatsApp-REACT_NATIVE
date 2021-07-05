@@ -53,6 +53,7 @@ function RootNavigator() {
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
                     options={({route}) =>
                         ({
+  // @ts-ignore
                                 title: route.params.name,
                                 headerRight: () => (
                                     <View style={{
