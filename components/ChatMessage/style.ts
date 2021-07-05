@@ -17,9 +17,11 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     message: {
+
     },
     time: {
-
+        alignSelf: "flex-end",
+        color: "grey",
     }
 });
 
