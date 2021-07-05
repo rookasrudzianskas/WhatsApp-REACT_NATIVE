@@ -6,7 +6,7 @@ import {useRoute} from "@react-navigation/native";
 const ChatRoomScreen = () => {
 
     const route = useRoute();
-    console.log(route.params);
+    console.log("This is route params", route.params);
 
     return (
         <View>
