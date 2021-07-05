@@ -11,9 +11,10 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         backgroundColor: "white",
         padding: 10,
-        borderRadius: 50,
+        borderRadius: 25,
         marginRight: 10,
         flex: 1,
+        alignItems: "center",
     },
     textInput: {
         flex: 1,
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     },
     buttonContainer: {
         backgroundColor: Colors.light.tint,
-        borderRadius: 50,
+        borderRadius: 25,
         width: 50,
         height: 50,
         justifyContent: "center",
