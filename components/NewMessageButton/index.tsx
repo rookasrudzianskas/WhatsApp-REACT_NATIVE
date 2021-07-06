@@ -22,6 +22,7 @@ const NewMessageButton = () => {
                 <MaterialCommunityIcons name="message-reply-text" size={28} color="white" />
                 <MaterialCommunityIcons name="message-reply-text" size={28} color="white" />
                 <MaterialCommunityIcons name="message-reply-text" size={28} color="white" />
+                <MaterialCommunityIcons name="message-reply-text" size={28} color="white" />
             </View>
         </TouchableOpacity>
     )
