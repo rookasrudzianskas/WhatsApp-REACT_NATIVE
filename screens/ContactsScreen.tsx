@@ -6,24 +6,28 @@ import { Text, View } from '../components/Themed';
 import ChatListItem from "../components/ChatListItem";
 import chatRooms from "../data/ChatRooms";
 import NewMessageButton from "../components/NewMessageButton";
-import users from "../data/Users";
 import ContactListItem from "../components/ContactListItem";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {API, graphqlOperation} from 'aws-amplify';
 import {listUsers} from "../src/graphql/queries";
 
 export default function ContactsScreen() {
+
+    const [users, setUsers] = useState([]);
 
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
                 const userData = await API.graphql(graphqlOperation(listUsers));
-                console.log(userData);
+                // @ts-ignore
+                setUsers(userData.data.getUsers.items);
             } catch (e) {
-
+                console.log(e);
             }
         }
+
+        fetchUsers();
     }, []);
     return (
         <View style={styles.container}>
