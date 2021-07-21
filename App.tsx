@@ -12,7 +12,7 @@ import config from './aws-exports';
 Amplify.configure(config);
 
 // @ts-ignore
-import { withAuthenticator } from 'aws-amplify-react-native';
+import { withAuthenticator, AmplifySignOut } from 'aws-amplify-react-native';
 
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
     return null;
   } else {
     return (
+
       <SafeAreaProvider>
         <Navigation colorScheme={colorScheme} />
         <StatusBar />
