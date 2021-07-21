@@ -71,7 +71,7 @@ function RootNavigator() {
                 })} />
   {/*// @ts-ignore*/}
       <Stack.Screen name="Contacts" component={ContactsScreen} options={{ title: 'Contacts' }} />
-      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
+      <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'What are you doing there?! 🚀' }} />
     </Stack.Navigator>
   );
 }
