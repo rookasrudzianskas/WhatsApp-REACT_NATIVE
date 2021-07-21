@@ -3,9 +3,11 @@ type User @model {
   name: String!
   imageUri: String
   status: String
+#  this is the room memebers
+  chatRoomUser: [ChatRoomUser] @connection(keyName: "byUser", fields: ["id"])
 }
 
-type ChatRoomUser @model {
+type ChatRoomUser @model @key(name: "byUser", fields: ["userID", "chatRoomID"]) @key(name: "byChatRoom", fields: ["chatRoomID", "userID"]) {
   id: ID!
   userID: ID!
   chatRoomID: ID!
@@ -15,6 +17,7 @@ type ChatRoomUser @model {
 
 type ChatRoom @model {
   id: ID!
+  chatRoomUsers: [ChatRoomUser] @connection(keyName: "byChatRoom", fields: ["id"])
   # list of users
   # list of messages
 }
