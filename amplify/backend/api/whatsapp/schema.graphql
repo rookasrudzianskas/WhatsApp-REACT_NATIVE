@@ -4,3 +4,17 @@ type User @model {
   imageUri: String
   status: String
 }
+
+type ChatRoomUser @model {
+  id: ID!
+  userID: ID!
+  chatRoomID: ID!
+  user: User @connection(fields: ["userID"])
+  chatRoom: ChatRoom @connection(fields: ["chatRoomID"])
+}
+
+type ChatRoom @model {
+  id: ID!
+  # list of users
+  # list of messages
+}
