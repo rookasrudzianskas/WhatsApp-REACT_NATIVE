@@ -8,8 +8,22 @@ import chatRooms from "../data/ChatRooms";
 import NewMessageButton from "../components/NewMessageButton";
 import users from "../data/Users";
 import ContactListItem from "../components/ContactListItem";
+import {useEffect} from "react";
+import {API, graphqlOperation} from 'aws-amplify';
+import {listUsers} from "../src/graphql/queries";
 
 export default function ContactsScreen() {
+
+
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const userData = await API.graphql(graphqlOperation(listUsers));
+            } catch (e) {
+
+            }
+        }
+    }, []);
     return (
         <View style={styles.container}>
             {/*// @ts-ignore*/}
