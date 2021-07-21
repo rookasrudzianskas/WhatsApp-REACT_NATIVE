@@ -11,7 +11,7 @@ import config from './aws-exports';
 
 Amplify.configure(config);
 
-import { withAuthenticator } from 'aws-amplify-react-native'
+import { withAuthenticator } from 'aws-amplify-react-native';
 
 
 function App() {
