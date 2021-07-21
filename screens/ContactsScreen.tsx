@@ -14,14 +14,15 @@ import {listUsers} from "../src/graphql/queries";
 export default function ContactsScreen() {
 
     const [users, setUsers] = useState([]);
+    console.log(users);
 
 
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const userData = await API.graphql(graphqlOperation(listUsers));
+                const usersData = await API.graphql(graphqlOperation(listUsers));
                 // @ts-ignore
-                setUsers(userData.data.getUsers.items);
+                setUsers(usersData.data.listUsers.items);
             } catch (e) {
                 console.log(e);
             }
