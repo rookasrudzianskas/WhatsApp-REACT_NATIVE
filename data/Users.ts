@@ -7,13 +7,13 @@ export default [{
   id: 'u2',
   name: 'Lukas',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/2.jpg',
-  status: "💚"
+  status: "Hello, I am using the Brainlyemails"
 
 }, {
   id: 'u3',
   name: 'Tim',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/3.jpg',
-  status: "💚"
+  status: "Hello, I am using the CONNEXIOUS"
 
 }, {
   id: 'u4',
@@ -25,7 +25,7 @@ export default [{
   id: 'u5',
   name: 'Todd',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/4.jpg',
-  status: "💚"
+  status: "🚀🔥"
 
 }, {
   id: 'u6',
@@ -43,13 +43,13 @@ export default [{
   id: 'u8',
   name: 'Suzan',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/7.png',
-  status: "💚"
+  status: "Hello, I am Rokas"
 
 }, {
   id: 'u9',
   name: 'Mom',
   imageUri: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/8.png',
-  status: "💚"
+  status: "Always happy to meet up with others!"
 
 }, {
   id: 'u10',
