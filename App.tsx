@@ -11,6 +11,7 @@ import config from './aws-exports';
 
 Amplify.configure(config);
 
+// @ts-ignore
 import { withAuthenticator } from 'aws-amplify-react-native';
 
 
