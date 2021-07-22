@@ -29,6 +29,7 @@ function App() {
 
   ]
 
+
   useEffect(() => {
     // run this code then the application loads
     const fetchUser = async () => {
