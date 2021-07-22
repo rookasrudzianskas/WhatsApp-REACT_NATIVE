@@ -23,7 +23,7 @@ type ChatRoom @model {
   # list of messages
 }
 
-type Message @model @key(name="byChatRoom", fields: ["chatRoomID", "createdAt"], queryField: "messagesByChatRoom") {
+type Message @model @key(name:"byChatRoom", fields: ["chatRoomID", "createdAt"], queryField: "messagesByChatRoom") {
   id: ID!
   createdAt: String!
   content: String!
