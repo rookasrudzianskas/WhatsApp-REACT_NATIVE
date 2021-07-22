@@ -7,8 +7,19 @@ import ChatListItem from "../components/ChatListItem";
 import chatRooms from "../data/ChatRooms";
 import NewMessageButton from "../components/NewMessageButton";
 
+import {useEffect} from "react";
+
 
 export default function ChatsScreen() {
+
+    useEffect(() => {
+        const fetchChatRooms = async () => {
+
+        }
+
+        fetchChatRooms();
+
+    }, []);
   return (
     <View style={styles.container}>
   {/*// @ts-ignore*/}
