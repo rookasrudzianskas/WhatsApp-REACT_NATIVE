@@ -7,20 +7,24 @@ import ChatListItem from "../components/ChatListItem";
 import chatRooms from "../data/ChatRooms";
 import NewMessageButton from "../components/NewMessageButton";
 
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {API, Auth, graphqlOperation} from "aws-amplify";
 import {getUser} from "./queries";
 
 
 export default function ChatsScreen() {
 
+    const [chatRooms, setChatRooms] = useState([]);
+    console.log("🚀", chatRooms);
+
     useEffect(() => {
         const fetchChatRooms = async () => {
             try {
                 const userInfo = await Auth.currentAuthenticatedUser();
 
-                   const userData = API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
-                    console.log(userData);
+                   const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+                   setChatRooms(userData.data.getUser.chatRoomUser.items);
+                    console.log("THIS IS SUPER", userData);
             } catch (e) {
                 console.log(e);
             }
@@ -29,6 +33,28 @@ export default function ChatsScreen() {
         fetchChatRooms();
 
     }, []);
+
+    // useEffect(() => {
+    //     const fetchChatRooms = async () => {
+    //         try {
+    //             const userInfo = await Auth.currentAuthenticatedUser();
+    //
+    //             const userData = await API.graphql(
+    //                 graphqlOperation(
+    //                     getUser, {
+    //                         id: userInfo.attributes.sub,
+    //                     }
+    //                 )
+    //             )
+    //
+    //             setChatRooms(userData.data.getUser.chatRoomUser.items)
+    //         } catch (e) {
+    //             console.log(e);
+    //         }
+    //     }
+    //     fetchChatRooms();
+    // }, []);
+
   return (
     <View style={styles.container}>
   {/*// @ts-ignore*/}
