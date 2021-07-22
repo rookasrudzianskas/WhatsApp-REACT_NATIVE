@@ -29,10 +29,11 @@ const ChatListItem = (props: ChatListItemProps) => {
             if(chatRoom.chatRoomUsers.items[0].user.id === userInfo.attributes.sub) {
                 // @ts-ignore
                 setOtherUser(chatRoom.chatRoomUsers.items[1].user);
-            }
+            } else {
+                // @ts-ignore
+                setOtherUser(chatRoom.chatRoomUsers.items[0].user);
 
-            // @ts-ignore
-            const user = chatRoom.chatRoomUsers.items[0].user;
+            }
 
         }
 
