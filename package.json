@@ -22,7 +22,7 @@
     "@react-navigation/stack": "~5.12.8",
     "aws-amplify": "^4.2.0",
     "aws-amplify-react-native": "^5.0.3",
-    "expo": "^1.0.0",
+    "expo": "~41.0.1",
     "expo-asset": "~8.3.2",
     "expo-constants": "~11.0.1",
     "expo-font": "~9.2.1",
