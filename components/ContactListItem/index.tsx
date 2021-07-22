@@ -23,7 +23,12 @@ const ContactListItem = (props: ContactListItemProps) => {
 
     const onClick = () => {
         try {
+            // 1. create a new Chat Room
 
+
+            // 2. add user to the chat room
+
+            // 3. add authenticated user to the chat room
         } catch (e) {
             console.log(e);
         }
