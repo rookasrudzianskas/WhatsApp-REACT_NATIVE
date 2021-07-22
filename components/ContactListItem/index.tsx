@@ -4,7 +4,7 @@ import styles from "./style";
 import {ChatRoom, User} from "../../types";
 import moment from "moment";
 import { useNavigation } from "@react-navigation/native";
-import {API, graphqlOperation} from "aws-amplify";
+import {API, Auth, graphqlOperation} from "aws-amplify";
 import {createChatRoom, createChatRoomUser} from "../../src/graphql/mutations";
 
 export type ContactListItemProps = {
@@ -38,9 +38,13 @@ const ContactListItem = (props: ContactListItemProps) => {
 
             // 2. add user to the chat room
 
-            const newUserChatRoom = await API.graphql(graphqlOperation(createChatRoomUser, {userID: user.id, chatRoomID: newChatRoom.id}));
+            await API.graphql(graphqlOperation(createChatRoomUser, {userID: user.id, chatRoomID: newChatRoom.id})); // some person in the chat room
 
             // 3. add authenticated user to the chat room
+
+            const userInfo = await Auth.currentAuthenticatedUser();
+            await API.graphql(graphqlOperation(createChatRoomUser, {userID: userInfo.attributes.sub, chatRoomID: newChatRoom.id})); // the person I am logged in in hte chatroom is added
+
         } catch (e) {
             console.log(e);
         }
