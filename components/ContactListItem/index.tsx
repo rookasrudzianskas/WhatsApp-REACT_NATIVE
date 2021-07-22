@@ -4,6 +4,8 @@ import styles from "./style";
 import {ChatRoom, User} from "../../types";
 import moment from "moment";
 import { useNavigation } from "@react-navigation/native";
+import {API, graphqlOperation} from "aws-amplify";
+
 export type ContactListItemProps = {
     user: User;
 }
@@ -20,7 +22,8 @@ const ContactListItem = (props: ContactListItemProps) => {
     // const user = chatRoom.users[1];
 
     const onClick = () => {
-        //
+        console.log("HELLO");
+
 
     }
 
