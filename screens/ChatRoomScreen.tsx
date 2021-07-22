@@ -11,7 +11,7 @@ import {messagesByChatRoom} from "../src/graphql/queries";
 
 const ChatRoomScreen = () => {
 
-    const [message, setMessages] = useState([]);
+    const [messages, setMessages] = useState([]);
 
     const route = useRoute();
 
