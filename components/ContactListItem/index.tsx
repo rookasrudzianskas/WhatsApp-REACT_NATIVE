@@ -47,6 +47,9 @@ const ContactListItem = (props: ContactListItemProps) => {
             const userInfo = await Auth.currentAuthenticatedUser();
             await API.graphql(graphqlOperation(createChatRoomUser, {input: {userID: userInfo.attributes.sub, chatRoomID: newChatRoom.id}})); // the person I am logged in in hte chatroom is added
 
+            navigation.navigate("ChatRoom", {id: newChatRoom.id, name: "HardCoded name" });
+
+
         } catch (e) {
             console.log(e);
         }
