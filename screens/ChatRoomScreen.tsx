@@ -24,6 +24,7 @@ const ChatRoomScreen = () => {
                 sortDirection: "DESC",
             }))
 
+            fetchMessages();
 
             console.log(messageData);
         }
