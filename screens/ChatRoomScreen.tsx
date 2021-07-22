@@ -6,6 +6,8 @@ import ChatMessage from "../components/ChatMessage";
 // @ts-ignore
 import BG from "../assets/images/BG.png";
 import InputBox from "../components/InputBox";
+import {API, graphqlOperation} from "aws-amplify";
+import {messagesByChatRoom} from "../src/graphql/queries";
 
 
 const ChatRoomScreen = () => {
@@ -14,7 +16,10 @@ const ChatRoomScreen = () => {
 
     useEffect(() => {
         const fetchMessages = async() => {
-
+            const messageData = await API.graphql(graphqlOperation(messagesByChatRoom, {
+                chatRoomID: route.params.id,
+                sortDirection: "DESC",
+            }))
         }
     }, []);
 
