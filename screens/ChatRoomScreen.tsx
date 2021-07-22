@@ -12,13 +12,14 @@ const ChatRoomScreen = () => {
 
     const route = useRoute();
 
-    return (
     // @ts-ignore
+    return (
         <ImageBackground style={{ width: '100%', height: '100%' }} source={BG}>
     {/*// @ts-ignore*/}
             <FlatList data={chatRoomData.messages} renderItem={({item}) => <ChatMessage message={item}  /> } inverted />
 
-            <InputBox />
+    {/*// @ts-ignore*/}
+            <InputBox chatRoomID={route.params.id} />
         </ImageBackground>
     );
 };
