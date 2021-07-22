@@ -1,9 +1,10 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, Image, TouchableOpacity} from "react-native";
 import styles from "./style";
 import {ChatRoom} from "../../types";
 import moment from "moment";
 import { useNavigation } from "@react-navigation/native";
+import {Auth} from "aws-amplify";
 export type ChatListItemProps = {
     chatRoom: ChatRoom;
 }
@@ -14,12 +15,30 @@ const ChatListItem = (props: ChatListItemProps) => {
     const navigation = useNavigation();
 
     const { chatRoom } = props;
+    const [otherUser, setOtherUser] = useState(null);
 
     // @ts-ignore
     const user = chatRoom.chatRoomUsers.items[0].user;
 
-    console.log("user >>>>>>>>>>>", user);
-    console.log("SOMEBODY HERE",chatRoom.chatRoomUsers);
+    useEffect(() => {
+        const getOtherUser = async () => {
+            // @ts-ignore
+            const userInfo = await Auth.getAuthenticatedUser();
+
+            // @ts-ignore
+            if(chatRoom.chatRoomUsers.items[0].user.id === userInfo.attributes.sub) {
+                // @ts-ignore
+                setOtherUser(chatRoom.chatRoomUsers.items[1].user);
+            }
+
+            // @ts-ignore
+            const user = chatRoom.chatRoomUsers.items[0].user;
+
+        }
+
+        getOtherUser();
+    }, []);
+
     const onClick = () => {
         //
         navigation.navigate("ChatRoom", {id: chatRoom.id, name: user.name });
