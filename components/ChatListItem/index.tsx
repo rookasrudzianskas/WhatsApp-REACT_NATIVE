@@ -12,6 +12,7 @@ export type ChatListItemProps = {
 const ChatListItem = (props: ChatListItemProps) => {
 
     const navigation = useNavigation();
+    console.log(chatRoom.chatRoomUsers);
 
     const { chatRoom } = props;
 
