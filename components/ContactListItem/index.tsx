@@ -22,9 +22,11 @@ const ContactListItem = (props: ContactListItemProps) => {
     // const user = chatRoom.users[1];
 
     const onClick = () => {
-        console.log("HELLO");
+        try {
 
-
+        } catch (e) {
+            console.log(e);
+        }
     }
 
     return (
