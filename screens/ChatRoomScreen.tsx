@@ -11,7 +11,6 @@ import InputBox from "../components/InputBox";
 const ChatRoomScreen = () => {
 
     const route = useRoute();
-    console.log("This is route params", route.params);
 
     return (
     // @ts-ignore
