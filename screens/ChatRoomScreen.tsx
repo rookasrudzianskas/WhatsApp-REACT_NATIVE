@@ -13,7 +13,9 @@ const ChatRoomScreen = () => {
     const route = useRoute();
 
     useEffect(() => {
+        const fetchMessages = async() => {
 
+        }
     }, []);
 
     // @ts-ignore
