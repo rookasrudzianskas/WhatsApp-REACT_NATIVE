@@ -21,3 +21,7 @@ type ChatRoom @model {
   # list of users
   # list of messages
 }
+
+type Message @model {
+
+}
