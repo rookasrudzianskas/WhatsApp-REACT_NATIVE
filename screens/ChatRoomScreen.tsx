@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, FlatList, ImageBackground} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import chatRoomData from "../data/Chats";
@@ -11,6 +11,10 @@ import InputBox from "../components/InputBox";
 const ChatRoomScreen = () => {
 
     const route = useRoute();
+
+    useEffect(() => {
+
+    }, []);
 
     // @ts-ignore
     return (
