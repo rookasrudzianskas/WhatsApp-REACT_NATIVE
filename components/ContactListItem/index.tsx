@@ -38,12 +38,12 @@ const ContactListItem = (props: ContactListItemProps) => {
 
             // 2. add user to the chat room
 
-            await API.graphql(graphqlOperation(createChatRoomUser, {userID: user.id, chatRoomID: newChatRoom.id})); // some person in the chat room
+            await API.graphql(graphqlOperation(createChatRoomUser, {input: {userID: user.id, chatRoomID: newChatRoom.id}})); // some person in the chat room
 
             // 3. add authenticated user to the chat room
 
             const userInfo = await Auth.currentAuthenticatedUser();
-            await API.graphql(graphqlOperation(createChatRoomUser, {userID: userInfo.attributes.sub, chatRoomID: newChatRoom.id})); // the person I am logged in in hte chatroom is added
+            await API.graphql(graphqlOperation(createChatRoomUser, {input: {userID: userInfo.attributes.sub, chatRoomID: newChatRoom.id}})); // the person I am logged in in hte chatroom is added
 
         } catch (e) {
             console.log(e);
