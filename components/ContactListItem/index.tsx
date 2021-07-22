@@ -5,6 +5,7 @@ import {ChatRoom, User} from "../../types";
 import moment from "moment";
 import { useNavigation } from "@react-navigation/native";
 import {API, graphqlOperation} from "aws-amplify";
+import {createChatRoom} from "../../src/graphql/mutations";
 
 export type ContactListItemProps = {
     user: User;
@@ -21,10 +22,12 @@ const ContactListItem = (props: ContactListItemProps) => {
     // @ts-ignore
     // const user = chatRoom.users[1];
 
-    const onClick = () => {
+    const onClick = async () => {
         try {
             // 1. create a new Chat Room
+            const newChatRoomData = await API.graphql(graphqlOperation(createChatRoom, {input: {}}));
 
+            console.log(newChatRoomData);
 
             // 2. add user to the chat room
 
