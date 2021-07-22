@@ -8,13 +8,24 @@ import chatRooms from "../data/ChatRooms";
 import NewMessageButton from "../components/NewMessageButton";
 
 import {useEffect} from "react";
+import {API, Auth, graphqlOperation} from "aws-amplify";
+import {getUser} from "../src/graphql/queries";
 
 
 export default function ChatsScreen() {
 
     useEffect(() => {
         const fetchChatRooms = async () => {
+            try {
+                const userInfo = await Auth.currentAuthenticatedUser();
 
+                if(userInfo) {
+                   const userData = API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
+                    console.log(userData);
+                }
+            } catch (e) {
+                console.log(e);
+            }
         }
 
         fetchChatRooms();
