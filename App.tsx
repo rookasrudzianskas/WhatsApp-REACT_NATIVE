@@ -15,6 +15,9 @@ Amplify.configure(config);
 import { withAuthenticator, AmplifySignOut } from 'aws-amplify-react-native';
 import {getUser} from "./src/graphql/queries";
 import {createUser} from "./src/graphql/mutations";
+import {MaterialCommunityIcons} from "@expo/vector-icons";
+import * as Font from 'expo-font';
+
 
 
 function App() {
@@ -29,6 +32,22 @@ function App() {
 
   ]
 
+  useEffect(() => {
+      async function loadResourcesAndDataAsync() {
+        try {
+          // Load fonts
+          await Font.loadAsync({
+            ...MaterialCommunityIcons.font,
+          });
+
+        } catch (e) {
+          // We might want to provide this error information to an error reporting service
+          console.warn(e);
+        }
+      }
+
+      loadResourcesAndDataAsync();
+  }, []);
 
   useEffect(() => {
     // run this code then the application loads
