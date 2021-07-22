@@ -5,13 +5,14 @@ import ChatMessage from "../components/ChatMessage";
 // @ts-ignore
 import BG from "../assets/images/BG.png";
 import InputBox from "../components/InputBox";
-import {API, graphqlOperation} from "aws-amplify";
+import {API, Auth, graphqlOperation} from "aws-amplify";
 import {messagesByChatRoom} from "../src/graphql/queries";
 
 
 const ChatRoomScreen = () => {
 
     const [messages, setMessages] = useState([]);
+    const [myId, setMyId] = useState(null);
 
     const route = useRoute();
 
@@ -32,11 +33,19 @@ const ChatRoomScreen = () => {
         }
     }, []);
 
+    useEffect(() => {
+        const getMyId = async() => {
+            const userInfo = Auth.currentAuthenticatedUser();
+            // @ts-ignore
+            setMyId(userInfo.attributes.sub);
+        }
+    }, []);
+
     // @ts-ignore
     return (
         <ImageBackground style={{ width: '100%', height: '100%' }} source={BG}>
     {/*// @ts-ignore*/}
-            <FlatList data={messages} renderItem={({item}) => <ChatMessage message={item}  /> } inverted />
+            <FlatList data={messages} renderItem={({item}) => <ChatMessage myId={myId} message={item}  /> } inverted />
 
     {/*// @ts-ignore*/}
             <InputBox chatRoomID={route.params.id} />
