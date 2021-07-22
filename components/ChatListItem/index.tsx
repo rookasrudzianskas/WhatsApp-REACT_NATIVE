@@ -12,13 +12,14 @@ export type ChatListItemProps = {
 const ChatListItem = (props: ChatListItemProps) => {
 
     const navigation = useNavigation();
-    // console.log(chatRoom.chatRoomUsers);
 
     const { chatRoom } = props;
 
     // @ts-ignore
     const user = chatRoom.chatRoomUsers.items[1];
 
+    console.log("user >>>>>>>>>>>", user);
+    console.log("SOMEBODY HERE",chatRoom.chatRoomUsers);
     const onClick = () => {
         //
         navigation.navigate("ChatRoom", {id: chatRoom.id, name: user.name });
@@ -36,7 +37,7 @@ const ChatListItem = (props: ChatListItemProps) => {
                             <Text style={styles.username}>{user.name}</Text>
                             <Text numberOfLines={1} style={styles.lastMessage}>{ chatRoom.lastMessage? chatRoom.lastMessage.content : ""}</Text>
                         </View>
-                    </View>s
+                    </View>
 
             {/*// @ts-ignore*/}
                     <Text style={styles.time}>{chatRoom.lastMessage && moment(chatRoom.lastMessage.createdAt).format(" DD/MM/YYYY")}</Text>
