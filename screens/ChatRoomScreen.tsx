@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, ImageBackground} from "react-native";
 import {useRoute} from "@react-navigation/native";
-import chatRoomData from "../data/Chats";
 import ChatMessage from "../components/ChatMessage";
 // @ts-ignore
 import BG from "../assets/images/BG.png";
@@ -12,7 +11,7 @@ import {messagesByChatRoom} from "../src/graphql/queries";
 
 const ChatRoomScreen = () => {
 
-    const [message, setMessage] = useState("");
+    const [message, setMessages] = useState([]);
 
     const route = useRoute();
 
@@ -24,6 +23,9 @@ const ChatRoomScreen = () => {
                 sortDirection: "DESC",
             }))
 
+            // @ts-ignore
+            setMessages(messageData.data.messagesByChatRoom.items);
+
             fetchMessages();
 
             console.log(messageData);
@@ -34,7 +36,7 @@ const ChatRoomScreen = () => {
     return (
         <ImageBackground style={{ width: '100%', height: '100%' }} source={BG}>
     {/*// @ts-ignore*/}
-            <FlatList data={chatRoomData.messages} renderItem={({item}) => <ChatMessage message={item}  /> } inverted />
+            <FlatList data={messages} renderItem={({item}) => <ChatMessage message={item}  /> } inverted />
 
     {/*// @ts-ignore*/}
             <InputBox chatRoomID={route.params.id} />
