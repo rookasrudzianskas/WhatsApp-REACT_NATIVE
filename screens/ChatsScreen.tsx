@@ -34,26 +34,6 @@ export default function ChatsScreen() {
 
     }, []);
 
-    // useEffect(() => {
-    //     const fetchChatRooms = async () => {
-    //         try {
-    //             const userInfo = await Auth.currentAuthenticatedUser();
-    //
-    //             const userData = await API.graphql(
-    //                 graphqlOperation(
-    //                     getUser, {
-    //                         id: userInfo.attributes.sub,
-    //                     }
-    //                 )
-    //             )
-    //
-    //             setChatRooms(userData.data.getUser.chatRoomUser.items)
-    //         } catch (e) {
-    //             console.log(e);
-    //         }
-    //     }
-    //     fetchChatRooms();
-    // }, []);
 
   return (
     <View style={styles.container}>
