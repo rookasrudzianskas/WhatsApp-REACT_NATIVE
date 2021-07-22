@@ -27,11 +27,13 @@ const ContactListItem = (props: ContactListItemProps) => {
             // 1. create a new Chat Room
             const newChatRoomData = await API.graphql(graphqlOperation(createChatRoom, {input: {}}));
 
+            // @ts-ignore
             if(!newChatRoomData.data) {
                 console.log("Failed to create chat room...");
                 return;
             }
 
+            // @ts-ignore
             const newChatRoom = newChatRoomData.data.createChatRoom;
 
             // console.log(newChatRoom);
