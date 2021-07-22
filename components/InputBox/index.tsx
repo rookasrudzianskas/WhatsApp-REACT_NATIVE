@@ -47,20 +47,24 @@ const InputBox = (props) => {
     return (
         <KeyboardAvoidingView behavior="height" style={styles.container}>
             <View style={styles.mainContainer}>
-                <FontAwesome5 name="laugh-beam" size={24} color="grey" />
+                <Text>🚀</Text>
+                {/*<FontAwesome5 name="laugh-beam" size={24} color="grey" />*/}
                 <TextInput placeholder="Type a message" value={message} onChangeText={(text) => setMessage(text)} style={styles.textInput} multiline/>
-                <Entypo name="attachment" size={24} color="grey" style={styles.icon} />
-                <Fontisto name="camera" size={24} color="grey" style={styles.icon}  />
-
+                {/*<Entypo name="attachment" size={24} color="grey" style={styles.icon} />*/}
+                <Text>💌</Text>
+                {/*<Fontisto name="camera" size={24} color="grey" style={styles.icon}  />*/}
+                <Text>🎥</Text>
 
             </View>
 
             <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
                 {
                     !message ? (
-                        <MaterialCommunityIcons name="microphone" size={28} color="white" />
+                        // <MaterialCommunityIcons name="microphone" size={28} color="white" />
+                        <Text>🎤</Text>
                     ) : (
-                        <MaterialIcons name="send" size={28} color={"white"} />
+                        // <MaterialIcons name="send" size={28} color={"white"} />
+                        <Text>✉️</Text>
                     )
                 }
             </TouchableOpacity>

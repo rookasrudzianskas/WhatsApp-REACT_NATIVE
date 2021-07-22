@@ -17,9 +17,13 @@ const ChatRoomScreen = () => {
     useEffect(() => {
         const fetchMessages = async() => {
             const messageData = await API.graphql(graphqlOperation(messagesByChatRoom, {
+            // @ts-ignore
                 chatRoomID: route.params.id,
                 sortDirection: "DESC",
             }))
+
+
+            console.log(messageData);
         }
     }, []);
 
