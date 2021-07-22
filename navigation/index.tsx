@@ -28,6 +28,8 @@ const Stack = createStackNavigator<RootStackParamList>();
 function RootNavigator() {
     // @ts-ignore
     // @ts-ignore
+    // @ts-ignore
+    // @ts-ignore
     return (
     <Stack.Navigator screenOptions={{
         headerStyle: {
@@ -49,7 +51,6 @@ function RootNavigator() {
           )
       }} />
 
-  {/*// @ts-ignore*/}
       <Stack.Screen name="ChatRoom" component={ChatRoomScreen}
                     options={({route}) =>
                         ({
@@ -62,9 +63,11 @@ function RootNavigator() {
                                         justifyContent: "space-between",
                                         marginRight: 10,
                                     }}>
-                                        <FontAwesome5 name="video" size={22} color="white" />
-                                        <MaterialIcons name="call" size={22} color="white" />
-                                        <MaterialCommunityIcons name="dots-vertical" size={22} color="white" />
+                                        {/*<FontAwesome5 name="video" size={22} color="white" />*/}
+                                        {/*<MaterialIcons name="call" size={22} color="white" />*/}
+                                        {/*<MaterialCommunityIcons name="dots-vertical" size={22} color="white" />*/}
+  {/*// @ts-ignore*/}
+
 
                                     </View>
                                 )
