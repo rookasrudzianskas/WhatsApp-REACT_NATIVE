@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, ImageBackground} from "react-native";
 import {useRoute} from "@react-navigation/native";
 import chatRoomData from "../data/Chats";
@@ -11,6 +11,8 @@ import {messagesByChatRoom} from "../src/graphql/queries";
 
 
 const ChatRoomScreen = () => {
+
+    const [message, setMessage] = useState("");
 
     const route = useRoute();
 
