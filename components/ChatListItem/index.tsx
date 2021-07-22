@@ -16,7 +16,7 @@ const ChatListItem = (props: ChatListItemProps) => {
     const { chatRoom } = props;
 
     // @ts-ignore
-    const user = chatRoom.chatRoomUsers.items[1];
+    const user = chatRoom.chatRoomUsers.items[0].user;
 
     console.log("user >>>>>>>>>>>", user);
     console.log("SOMEBODY HERE",chatRoom.chatRoomUsers);
