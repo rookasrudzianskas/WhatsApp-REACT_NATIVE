@@ -17,32 +17,30 @@ const ChatListItem = (props: ChatListItemProps) => {
     const { chatRoom } = props;
     const [otherUser, setOtherUser] = useState(null);
 
-    // @ts-ignore
-    const user = chatRoom.chatRoomUsers.items[0].user;
-
     useEffect(() => {
+
         const getOtherUser = async () => {
+        const userInfo = await Auth.currentAuthenticatedUser();
+        // @ts-ignore
+        if (chatRoom.chatRoomUsers.items[0].user.id === userInfo.attributes.sub) {
             // @ts-ignore
-            const userInfo = await Auth.getAuthenticatedUser();
-
+            setOtherUser(chatRoom.chatRoomUsers.items[1].user);
+        } else {
             // @ts-ignore
-            if(chatRoom.chatRoomUsers.items[0].user.id === userInfo.attributes.sub) {
-                // @ts-ignore
-                setOtherUser(chatRoom.chatRoomUsers.items[1].user);
-            } else {
-                // @ts-ignore
-                setOtherUser(chatRoom.chatRoomUsers.items[0].user);
-
-            }
-
+            setOtherUser(chatRoom.chatRoomUsers.items[0].user);
         }
-
-        getOtherUser();
-    }, []);
+    }
+    getOtherUser()
+    }, [])
 
     const onClick = () => {
         //
-        navigation.navigate("ChatRoom", {id: chatRoom.id, name: user.name });
+        // @ts-ignore
+        navigation.navigate("ChatRoom", {id: chatRoom.id, name: otherUser.name });
+    }
+
+    if(!otherUser) {
+        return null;
     }
 
     return (
@@ -50,11 +48,11 @@ const ChatListItem = (props: ChatListItemProps) => {
                 <View style={styles.container}>
                     <View style={styles.leftContainer}>
             {/*// @ts-ignore*/}
-                        <Image source={{uri: user.imageUri }} style={styles.avatar} />
+                        <Image source={{uri: otherUser.imageUri }} style={styles.avatar} />
 
                         <View style={styles.midContainer}>
             {/*// @ts-ignore*/}
-                            <Text style={styles.username}>{user.name}</Text>
+                            <Text style={styles.username}>{otherUser.name}</Text>
                             <Text numberOfLines={1} style={styles.lastMessage}>{ chatRoom.lastMessage? chatRoom.lastMessage.content : ""}</Text>
                         </View>
                     </View>
