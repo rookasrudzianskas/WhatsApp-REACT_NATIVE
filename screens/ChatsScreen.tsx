@@ -23,8 +23,10 @@ export default function ChatsScreen() {
                 const userInfo = await Auth.currentAuthenticatedUser();
 
                    const userData = await API.graphql(graphqlOperation(getUser, {id: userInfo.attributes.sub}));
-                   setChatRooms(userData.data.getUser.chatRoomUser.items);
-                    console.log("THIS IS SUPER", userData.data.getUser.chatRoomUser.items);
+                   // @ts-ignore
+                setChatRooms(userData.data.getUser.chatRoomUser.items);
+                    // @ts-ignore
+                console.log("THIS IS SUPER", userData.data.getUser.chatRoomUser.items);
             } catch (e) {
                 console.log(e);
             }
