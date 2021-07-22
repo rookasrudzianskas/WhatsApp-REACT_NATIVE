@@ -16,7 +16,7 @@ const ChatListItem = (props: ChatListItemProps) => {
     const { chatRoom } = props;
 
     // @ts-ignore
-    const user = chatRoom.users[1];
+    const user = chatRoom.chatRoomUsers.items[1];
 
     const onClick = () => {
         //
